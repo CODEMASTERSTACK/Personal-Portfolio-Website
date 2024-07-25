@@ -1,7 +1,3 @@
-Sure! Here's the improved README with icons included for each technology and tool:
-
----
-
 # Personal Website Project
 
 Welcome to my personal website project! This website showcases my skills, projects, and experiences as a first-year student at Lovely Professional University, pursuing a Bachelor of Computer Application in Big Data Analysis. The website is designed to be modern, clean, and user-friendly, providing an engaging experience for visitors.
@@ -47,7 +43,3 @@ This project is hosted on GitHub and Netlify. You can find the source code and i
 ## Contributing
 
 If you have any questions or want to contribute to the project, feel free to open an issue or submit a pull request.
-
----
-
-I hope this README makes your project stand out and provides a clear and engaging overview for visitors.
