@@ -2,6 +2,9 @@
 
 Welcome to my personal website project! This website showcases my skills, projects, and experiences as a first-year student at Lovely Professional University, pursuing a Bachelor of Computer Application in Big Data Analysis. The website is designed to be modern, clean, and user-friendly, providing an engaging experience for visitors.
 
+#Live Demo - https://kripalsingh.netlify.app
+
+
 ## Technologies and Tools Used
 
 Here is a breakdown of the technologies and tools used in this project:
