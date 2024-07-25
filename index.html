@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Personal Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <!-- Resume Download Button -->
+<style>
+  .button {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #1163ff;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+  display: inline-block;
+}
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+.text {
+  top: 0
+}
+.text,.icon {
+  transition: top 0.5s;
+}
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+.button:hover {
+  background: #6c18ff;
+}
+.button:hover .text {
+  top: -100%;
+}
+.button:hover .icon {
+  top: 0;
+}
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+  .form-card1 {
+    background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+    border-radius: 22px;
+    transition: all 0.3s;
+  }
+  .form-card1:hover {
+    box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+  }
+  .form-card2 {
+    border-radius: 0;
+    transition: all 0.2s;
+  }
+  .form-card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-family: inherit;
+    gap: 10px;
+    padding-inline: 2em;
+    padding-bottom: 0.4em;
+    background-color: #171717;
+    border-radius: 20px;
+  }
+  .form-heading {
+    text-align: center;
+    margin: 2em;
+    color: #64ffda;
+    font-size: 1.2em;
+    background-color: transparent;
+    align-self: center;
+  }
+  .form-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 10px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #ccd6f6;
+    padding-inline: 1em;
+  }
+  .sendMessage-btn {
+    cursor: pointer;
+    margin-bottom: 3em;
+    padding: 1em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #64ffda;
+    font-weight: bold;
+    outline: 1px solid #64ffda;
+    transition: all ease-in-out 0.3s;
+  }
+  .sendMessage-btn:hover {
+    transition: all ease-in-out 0.3s;
+    background-color: #64ffda;
+    color: #000;
+    cursor: pointer;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  .error {
+    color: #ff6464;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <h1><a href="index.html">Kripal Singh</a></h1>
+      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      <h2>I'm a First Year<span> Student </span>Of Lovely Professional University</h2>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="#header">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#resume">Resume</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="social-links">
+        <a href="Error.html" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="Error.html" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="Error.html" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/kripal-singh-a515b6302/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+
+    <!-- ======= About Me ======= -->
+    <div class="about-me container">
+
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Learn more about me</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>Front/Backend &amp; developer</h3>
+          <p class="fst-italic">
+            First year student of Bachelors of Computer Application in Big Data Analysis with IBM from the Lovely
+            Professional University, Punjab.
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>30 March 2006</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.Pkrishs.com</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91-XXXXXXXXXX</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Jhalandar, Punjab</span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>18</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>kripalsingh.work@gmail.com</span></li>
+              </ul>
+            </div>
+          </div>
+          <p>
+            I'm a passionate software developer working on innovative projects like 'ForgetPass,' a password manager web app turned mobile app. I also created an expense-tracking app with cloud storage. Beyond tech, I volunteer at the NGO 'Strangers Friend Helping Hand,' dedicating my time to educating and supporting needy children. My work blends tech innovation with community service.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- End About Me -->
+
+    <!-- ======= Counts ======= -->
+    <div class="counts container">
+
+      <div class="row">
+
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+          <div class="count-box">
+            <i class="bi bi-journal-richtext"></i>
+            <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projects</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="count-box">
+            <i class="bi bi-headset"></i>
+            <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="count-box">
+            <i class="bi bi-award"></i>
+            <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Awards and Achievements</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- End Counts -->
+
+    <!-- ======= Skills  ======= -->
+    <div class="skills container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+
+      <div class="row skills-content">
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill">HTML <i class="val">100%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">CSS <i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">Java<i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">C<i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">C++<i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill">Python<i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">MySQL<i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">PowerBI<i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">Photoshop <i class="val">55%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div><!-- End Skills -->
+
+    <!-- ======= Interests ======= -->
+    <div class="interests container">
+
+      <div class="section-title">
+        <h2>Interests</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+            <i class="ri-database-2-line" style="color: #ffbb2c;"></i>
+            <h3>Writing Code</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+            <h3>Working On Projects</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+            <h3>Learning new tech things</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <i class="ri-file-list-3-line" style="color: #e361ff;"></i>
+            <h3>Learning new languages</h3>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End Interests -->
+
+  </section><!-- End About Section -->
+
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Check My Resume</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="resume-title">Sumary</h3>
+          <div class="resume-item pb-0">
+            <h4>Kripal Singh</h4>
+            <p><em>I'm a dedicated software developer and community volunteer. I've developed 'ForgetPass,' a password manager app, and an expense-tracking app with cloud storage. I volunteer at the NGO 'Strangers Friend Helping Hand,' where I teach and provide resources to needy children. My work combines technology innovation with a commitment to community service.</em></p>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            <h4> Bachelors Of Computer Application(Big Data Analysis)</h4>
+            <h5>2023 - Present</h5>
+            <p><em>Lovely Professional University, Jalandhar, Punjab</em></p>
+            <p>I am pursuing a Bachelor of Computer Applications (BCA) in Big Data Analysis from Lovely Professional University in collaboration with IBM. The program focuses on advanced data analysis techniques, equipping students with the skills needed for data-driven decision-making and analytics in various industries.</p>
+          </div>
+          <div class="resume-item">
+            <h4>Class 12th</h4>
+            <h5>2022 - 2023</h5>
+            <p><em>GyanDeep Shiksha Bharti, Mathura, Uttar Pradesh</em></p>
+            <p>I have done my higher schooling from Gyandeep in 2023.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="resume-title">Work & Experience</h3>
+          <div class="resume-item">
+            <h4>NoteWise</h4>
+            <h5>2022 - Present</h5>
+            <p>
+            <ul>
+              <li>
+                For this project I've created a website for class notes in which anyone can access the notes according to the subject. I've used HTML, CSS and JavaScript to create this project. For the data storage, I've used google drive.</li>
+              </ul>
+            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Personal Website</h4>
+            <h5>2023</h5>
+            <p>
+            <ul>
+              <li>I created a personal website to showcase my skills and projects using HTML, CSS, and JavaScript. The site highlights my expertise in web development, features a portfolio of my work, and provides an interactive and engaging user experience.</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <div class="button" data-tooltip="My Resume">
+            <div class="button-wrapper">
+              <a href="https://drive.google.com/file/d/1znYyaFLnkKhOg3j6dMyljSff0BPQpWMt/view?usp=sharing" target="_blank">
+              <div class="text">Download</div>
+              
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  </section><!-- End Resume Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>My Works</p>
+      </div>
+
+      <div class="row portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Project 1</h4>
+              <p>Personal Website</p>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Personal Website"><i class="bx bx-plus"></i></a>
+                <a href="https://codemasterstack.github.io/Hi.com/website.html" target="_blank" <i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-2.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Project 2</h4>
+              <p>NoteWise</p>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="NoteWise"><i class="bx bx-plus"></i></a>
+                <a href="https://codemasterstack.github.io/Hi.com/Notespage.html"  target="_blank"<i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-3.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Project 3</h4>
+              <p>TODO-List</p>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="TODO-List App"><i class="bx bx-plus"></i></a>
+                <a href="https://github.com/CODEMASTERSTACK/Todo-List" target="_blank"<i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-4.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Project 4</h4>
+              <p>Password Manager</p>
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-4.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ForgetPass"><i class="bx bx-plus"></i></a>
+                <a href="https://github.com/CODEMASTERSTACK/ForgetPass" target="_blank"<i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Section -->
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Contact Me</p>
+      </div>
+
+      <div class="row mt-2">
+
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-map"></i>
+            <h3>My Address</h3>
+            <p>Jhalandar,Punjab</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-share-alt"></i>
+            <h3>Social Profiles</h3>
+            <div class="social-links">
+              <a href="Error.html" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="Error.html" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="Error.html" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="Error.html" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="https://www.linkedin.com/in/kripal-singh-a515b6302/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+          <div class="info-box w-100">
+            <div class="form-card1">
+              <div class="form-card2">
+                <form name="contact" method="POST" data-netlify="true" class="form">
+                  <p class="form-heading">Leave a Message For Me</p>
+                  <div class="form-field">
+                    <input required placeholder="Name" class="input-field" type="text" name="name" id="name" />
+                  </div>
+                  <div id="nameError" class="error"></div>
+                  <div class="form-field">
+                    <input required placeholder="Email" class="input-field" type="email" name="email" id="email" />
+                  </div>
+                  <div id="emailError" class="error"></div>
+                  <div class="form-field">
+                    <input required placeholder="Subject" class="input-field" type="text" name="subject" id="subject" />
+                  </div>
+                  <div id="subjectError" class="error"></div>
+                  <div class="form-field">
+                    <textarea required placeholder="Message" cols="30" rows="3" class="input-field" name="message" id="message"></textarea>
+                  </div>
+                  <div id="messageError" class="error"></div>
+                  <button type="submit" class="sendMessage-btn">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+
+<script>
+
+  // Logic For handling form with Netlify
+  document.querySelector("form").addEventListener("submit", function(e) {
+    let isValid = true;
+    
+    // Reset error messages
+    document.querySelectorAll('.error').forEach(el => el.textContent = '');
+    
+    // Validate name
+    const name = document.getElementById('name').value.trim();
+    if (name === '') {
+      document.getElementById('nameError').textContent = 'Name is required';
+      isValid = false;
+    }
+    
+    // Validate email
+    const email = document.getElementById('email').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      document.getElementById('emailError').textContent = 'Please enter a valid email address';
+      isValid = false;
+    }
+    
+    // Validate subject
+    const subject = document.getElementById('subject').value.trim();
+    if (subject === '') {
+      document.getElementById('subjectError').textContent = 'Subject is required';
+      isValid = false;
+    }
+    
+    // Validate message
+    const message = document.getElementById('message').value.trim();
+    if (message === '') {
+      document.getElementById('messageError').textContent = 'Message is required';
+      isValid = false;
+    }
+    
+    if (!isValid) {
+      e.preventDefault();
+    }
+  });
+</script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
